@@ -1,25 +1,34 @@
 <template>
-    <div class="slides">
-{{image.name}}
-    SLIDES
-    <div class="slideImage">
-
+   <div class="container">
+    <div class="slideImage" 
+    :style="setBackgroundImage"
+    >
+    </div>
+    <div class="text">
+        {{image.name}}
     </div>
     </div>
 </template>
 <script>
 export default {
-    props : ["image"]
+    props : ["image"],
+    computed: {
+        setBackgroundImage (){
+            return {
+                backgroundImage: "url("+this.image.url+")"
+            };
+        }
+    }
 }
+
 </script>
 <style scoped>
-.slides{
-
-}
 .slideImage{
+    height: 446px;
+    width: 887px;
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: url("/1.jpg")
 }
 
 </style>

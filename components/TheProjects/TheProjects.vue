@@ -6,7 +6,7 @@
  <p>и новокузнецкий драматический театр</p>
          </div>
         <div class="library">
-        <Slides />
+        <Slides :image="images[0]"/>
          </div>
      </div>
  </template>
@@ -52,22 +52,22 @@ export default {
                 {
                     id: 0,
                     name: "Первый адрес",
-                    src: '1.jpg'
+                    url: '/_nuxt/components/TheProjects/1.jpg'
                 },
                 {
                     id: 1,
                      name: "Второй адрес",
-                    src: '2.jpg'
+                    url: '/_nuxt/components/TheProjects/2.jpg'
                 },
                 {
                     id: 2,
                      name: "Третий адрес",
-                    src: '3.jpg'
+                    url: '/_nuxt/components/TheProjects/3.jpg'
                 },
                 {
                     id: 3,
                      name: "Новокузнецкий драматический театр, 540 м2",
-                    src: '4.jpg'
+                    url: '/_nuxt/components/TheProjects/4.jpg'
                 }
             
             ],
