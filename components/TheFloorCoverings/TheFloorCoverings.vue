@@ -8,7 +8,7 @@
                 <li v-for="covering in coverings"
                 :key="covering.id"
                 >
-{{covering.name}}
+                {{covering.name}}
                 </li>
             
             </ul>
@@ -17,8 +17,9 @@
             <ul>
                 <li v-for="parket in parkets"
                 :key="parket.id"
+
                 >
-<div class="list-item">
+<div class="list-item11">
     <div class="list-img"> 
         <img 
         :src="parket.image">
