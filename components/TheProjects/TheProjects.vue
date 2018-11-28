@@ -7,6 +7,8 @@
          </div>
         <div class="library">
         <Slides :image="images[0]"/>
+        <Slides :image="images[1]"/>
+
          </div>
      </div>
  </template>
@@ -56,17 +58,17 @@ export default {
                 },
                 {
                     id: 1,
-                     name: "Второй адрес",
+                    name: "Второй адрес",
                     url: '/_nuxt/components/TheProjects/2.jpg'
                 },
                 {
                     id: 2,
-                     name: "Третий адрес",
+                    name: "Третий адрес",
                     url: '/_nuxt/components/TheProjects/3.jpg'
                 },
                 {
                     id: 3,
-                     name: "Новокузнецкий драматический театр, 540 м2",
+                    name: "Новокузнецкий драматический театр, 540 м2",
                     url: '/_nuxt/components/TheProjects/4.jpg'
                 }
             
