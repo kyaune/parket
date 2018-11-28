@@ -1,7 +1,7 @@
 <template>
     <div class="slides">
-{{image.title}}
-    
+{{image.name}}
+    SLIDES
     <div class="slideImage">
 
     </div>
@@ -19,7 +19,7 @@ export default {
 .slideImage{
     background-position: center;
     background-size: cover;
-    background-image: url("static/1.jpg")
+    background-image: url("/1.jpg")
 }
 
 </style>

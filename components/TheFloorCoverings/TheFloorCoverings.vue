@@ -19,7 +19,7 @@
                 :key="parket.id"
 
                 >
-<div class="list-item11">
+<div class="list-item">
     <div class="list-img"> 
         <img 
         :src="parket.image">

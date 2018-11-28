@@ -5,12 +5,8 @@
              <p>квартиры, офисы, фитнес клубы</p>
  <p>и новокузнецкий драматический театр</p>
          </div>
-        <div class="library"
-        v-for="image in images"
-        :key="image.id"
-        v-if="image.id == flag"
-         >
-         <img :src="images[choseImage].src">
+        <div class="library">
+        <Slides />
          </div>
      </div>
  </template>
@@ -45,7 +41,11 @@
  </style>
 <script>
 
+import Slides from '@/components/TheProjects/Slides.vue'
 export default {
+    components :{
+        Slides
+    },
     data() {
         return {
             images: [
@@ -75,25 +75,25 @@ export default {
         };
         
     },
-    methods :{
-        move(){
-            var flag = this.choseImage;
-            flag++;
-            console.log(flag);
-            if(flag >= this.images.length){
-                flag = 0;
-            }
-            this.choseImage = flag;
-        },
-    },
+    // methods :{
+    //     move(){
+    //         var flag = this.choseImage;
+    //         flag++;
+    //         console.log(flag);
+    //         if(flag >= this.images.length){
+    //             flag = 0;
+    //         }
+    //         this.choseImage = flag;
+    //     },
+    // },
     
-    created() {
-        var self = this;
-        setInterval(() =>{
-            self.move();
-            console.log('Done!');
-        }, 1000);
-    }
+    // created() {
+    //     var self = this;
+    //     setInterval(() =>{
+    //         self.move();
+    //         console.log('Done!');
+    //     }, 10000);
+    // }
     
 };
 </script>
