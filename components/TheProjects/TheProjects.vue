@@ -7,7 +7,6 @@
          </div>
         <div class="library">
         <Slides :image="images[0]"/>
-        <Slides :image="images[1]"/>
 
          </div>
      </div>
