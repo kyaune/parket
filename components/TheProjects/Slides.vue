@@ -1,7 +1,7 @@
 <template>
    <div class="container">
     <div class="slideImage" 
-    
+    :style="setBackgroundImage"
     >
     </div>
     <div class="text">
@@ -29,7 +29,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: url("/_nuxt/components/TheProjects/3.jpg");
+    /* background-image: url("4.jpg") */
 }
 
 </style>

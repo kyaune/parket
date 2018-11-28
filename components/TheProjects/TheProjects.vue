@@ -6,7 +6,7 @@
  <p>и новокузнецкий драматический театр</p>
          </div>
         <div class="library">
-        <Slides :image="images[0]"/>
+        <Slides :image="images[choseImage]"/>
 
          </div>
      </div>
@@ -72,29 +72,29 @@ export default {
                 }
             
             ],
-            choseImage : 0
+            choseImage : 3
         };
         
     },
-    // methods :{
-    //     move(){
-    //         var flag = this.choseImage;
-    //         flag++;
-    //         console.log(flag);
-    //         if(flag >= this.images.length){
-    //             flag = 0;
-    //         }
-    //         this.choseImage = flag;
-    //     },
-    // },
+    methods :{
+        move(){
+            var flag = this.choseImage;
+            flag++;
+            // console.log(this.choseImage);
+            if(flag > this.images.length){
+                flag = 0;
+            }
+            this.choseImage = flag;
+        },
+    },
     
-    // created() {
-    //     var self = this;
-    //     setInterval(() =>{
-    //         self.move();
-    //         console.log('Done!');
-    //     }, 10000);
-    // }
+    created() {
+        var self = this;
+        setInterval(() =>{
+            self.move();
+            console.log('Done!');
+        }, 4000);
+    }
     
 };
 </script>
