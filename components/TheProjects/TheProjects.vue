@@ -6,7 +6,7 @@
  <p>и новокузнецкий драматический театр</p>
          </div>
         <div class="library">
-        <Slides :image="images[choseImage]"/>
+        <Slides :image="images[choseImage % images.length]"/>
 
          </div>
      </div>
@@ -53,45 +53,41 @@ export default {
                 {
                     id: 0,
                     name: "Первый адрес",
-                    url: '/_nuxt/components/TheProjects/1.jpg'
+                    url: require('~/components/TheProjects/image1.jpg')
                 },
                 {
                     id: 1,
                     name: "Второй адрес",
-                    url: '/_nuxt/components/TheProjects/2.jpg'
+                    url: require('~/components/TheProjects/2.jpg')
                 },
                 {
                     id: 2,
                     name: "Третий адрес",
-                    url: '/_nuxt/components/TheProjects/3.jpg'
+                    url: require('~/components/TheProjects/3.jpg')
                 },
                 {
                     id: 3,
                     name: "Новокузнецкий драматический театр, 540 м2",
-                    url: '/_nuxt/components/TheProjects/4.jpg'
+                    url: require('~/components/TheProjects/4.jpg')
                 }
             
             ],
-            choseImage : 3
+            choseImage : 0
         };
         
     },
+
     methods :{
         move(){
-            var flag = this.choseImage;
-            flag++;
-            // console.log(this.choseImage);
-            if(flag > this.images.length){
-                flag = 0;
-            }
-            this.choseImage = flag;
+            var that = this;
+            that.choseImage++;
+             console.log(that.choseImage);
         },
     },
     
     created() {
-        var self = this;
         setInterval(() =>{
-            self.move();
+            this.move();
             console.log('Done!');
         }, 4000);
     }

@@ -4,6 +4,9 @@
     :style="setBackgroundImage"
     >
     </div>
+    <div class="item-container">
+
+    </div>
     <div class="text">
         {{image.name}}
     </div>
@@ -29,7 +32,19 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /* background-image: url("4.jpg") */
+}
+.container{
+padding: 0px 0px 0px 0px;
+margin: 0px 0px 0px 0px;
+}
+.text{
+    font-size: 13px;
+    text-align: center;
+    padding-top: 10px;
+}
+.item-container{
+    width: 56px;
+    height: 10px;
 }
 
 </style>
