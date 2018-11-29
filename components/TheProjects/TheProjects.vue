@@ -7,10 +7,14 @@
          </div>
         <div class="library">
         <Slides :image="images[choseImage % images.length]"/>
-
-         </div>
-         <div class="button">
-            
+        <div class="buttons">
+<div class="button-prev">
+<img src="prev.svg">
+</div>
+<div class="button-next">
+<img src="next.svg">
+</div>
+</div>
          </div>
      </div>
  </template>
@@ -41,6 +45,15 @@
      font-size: 13px;
      text-align: center;
      margin-top: 30px;
+ }
+ .buttons{
+     position: absolute;
+ }
+ .button-prev{
+/* background-image: url('~/components/TheProjects/prev.svg'); */
+ }
+ .button-next{
+/* background-image: url("~/components/TheProjects/next.svg"); */
  }
  </style>
 <script>
@@ -75,34 +88,20 @@ export default {
                 }
             
             ],
-            choseImage : 2
+            choseImage : 1,
         };
         
     },
-
-    methods :{
-        move(){
-            var that = this;
-            that.choseImage++;
-             console.log(that.choseImage);
-        },
-    
-    
-    startInterval() {
+ created() {
+this.startInterval();
+ },
+    methods : {
+    startInterval () {
         setInterval(() =>{
-            this.move();
-            console.log('Done!');
-        }, 4000);
-    },
-    next(){
-    var that = this;
-    this.choseImage++;
-    },
-    prev(){
-    var that = this;
-    this.choseImage--;
+            this.choseImage++;
+            console.log(this.choseImage);
+        },4000);
     }
-    }
-    
+    } 
 };
 </script>
