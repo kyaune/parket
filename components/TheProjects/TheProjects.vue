@@ -72,7 +72,7 @@ export default {
                 }
             
             ],
-            choseImage : 0
+            choseImage : 1
         };
         
     },
