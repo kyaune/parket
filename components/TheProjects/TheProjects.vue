@@ -9,6 +9,9 @@
         <Slides :image="images[choseImage % images.length]"/>
 
          </div>
+         <div class="button">
+            
+         </div>
      </div>
  </template>
  <style scoped>
@@ -58,21 +61,21 @@ export default {
                 {
                     id: 1,
                     name: "Второй адрес",
-                    url: require('~/components/TheProjects/2.jpg')
+                    url: require('~/components/TheProjects/image2.jpg')
                 },
                 {
                     id: 2,
                     name: "Третий адрес",
-                    url: require('~/components/TheProjects/3.jpg')
+                    url: require('~/components/TheProjects/image3.jpg')
                 },
                 {
                     id: 3,
                     name: "Новокузнецкий драматический театр, 540 м2",
-                    url: require('~/components/TheProjects/4.jpg')
+                    url: require('~/components/TheProjects/image4.jpg')
                 }
             
             ],
-            choseImage : 1
+            choseImage : 2
         };
         
     },
@@ -83,13 +86,22 @@ export default {
             that.choseImage++;
              console.log(that.choseImage);
         },
-    },
     
-    created() {
+    
+    startInterval() {
         setInterval(() =>{
             this.move();
             console.log('Done!');
         }, 4000);
+    },
+    next(){
+    var that = this;
+    this.choseImage++;
+    },
+    prev(){
+    var that = this;
+    this.choseImage--;
+    }
     }
     
 };
