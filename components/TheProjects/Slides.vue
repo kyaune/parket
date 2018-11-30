@@ -1,9 +1,11 @@
 <template>
    <div class="container">
+       <transition name="component-fade" :duration="2000">
     <div class="slideImage" 
     :style="setBackgroundImage"
     >
     </div>
+       </transition>
     <div class="item-container">
 
     </div>
@@ -36,6 +38,10 @@ export default {
 .container{
 padding: 0px 0px 0px 0px;
 margin: 0px 0px 0px 0px;
+transition: all .8s ease;
+transform: translateX(-200px);
+transform: translateX(0px);
+
 }
 .text{
     font-size: 13px;
@@ -45,6 +51,14 @@ margin: 0px 0px 0px 0px;
 .item-container{
     width: 56px;
     height: 10px;
+}
+.component-fade-enter-active {
+ transition: all .8s ease;
+ 
+}
+.component-fade-enter, .component-fade-leave-to {
+    transform: translateX(-20px);
+ opacity: 0;
 }
 
 </style>

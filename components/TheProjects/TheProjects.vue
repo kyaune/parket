@@ -5,18 +5,45 @@
              <p>квартиры, офисы, фитнес клубы</p>
  <p>и новокузнецкий драматический театр</p>
          </div>
-        <div class="library">
-        <Slides :image="images[choseImage % images.length]"/>
-        <div class="buttons">
+         
+        <div class="library"
+         v-on:mouseover="stop"
+        v-on:mouseout="start"
+        >
+        <transition name="component-fade" mode="out-in">
+        <div class="slider"  v-bind:key="choseImage">
+        
+        <!-- <Slides :image="images[Math.abs(choseImage) % images.length]"/> -->
+          <img 
+          :src="images[Math.abs(choseImage) % images.length].src"
+          
+          />      
+         
+         
+          <div class="text">
+          {{images[Math.abs(choseImage) % images.length].name}}
+          </div>
+         
+        </div>
+        </transition>
+        </div>
+         
+        <div class="buttons"
+        v-on:mouseover="stop"
+        v-on:mouseout="start"
+        >
 <div class="button-prev">
-<img src="prev.svg">
+<img src="@/static/back.svg"
+v-on:click="prev"
+>
 </div>
 <div class="button-next">
-<img src="next.svg">
+<img src="@/static/next.svg"
+v-on:click="next"
+>
 </div>
 </div>
-         </div>
-     </div>
+</div>
  </template>
  <style scoped>
 
@@ -27,34 +54,57 @@
  .p{
      font-size: 27px;
  }
-
- img{
-  width: 887px;
-  height: 466px;
- }
  .main{
-     margin-bottom: 90px;
+     margin-bottom: 80px;
      line-height: 20px;
  }
  .library{
      margin-top: 45px;
      display: flex;
      flex-direction: column;
+     min-height: 500px;
+ }
+ .library img{
+  width: 887px;
+  height: 466px;
  }
  .description{
      font-size: 13px;
      text-align: center;
      margin-top: 30px;
  }
- .buttons{
-     position: absolute;
+.buttons{
+    position: relative;
+    bottom: 290px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 7px;
+}
+ .buttons img{
+     height: 40px;
+     width: 40px;
+     background-color:rgb(236, 232, 232);
+     opacity: 0.1;
  }
- .button-prev{
-/* background-image: url('~/components/TheProjects/prev.svg'); */
- }
- .button-next{
-/* background-image: url("~/components/TheProjects/next.svg"); */
- }
+ .text{
+    font-size: 13px;
+    text-align: center;
+    padding-top: 10px;
+}
+ .component-fade-enter-active, .componet-fade-leave-active {
+ transition: all .8s ease;
+ /* opacity: 1; */
+ position: absolute;
+ /* overflow: visible; */
+}
+.component-fade-enter, .component-fade-leave-to {
+    transform: translateX(-20px);
+ opacity: 0;
+ /* overflow: hidden; */
+}
+
+
  </style>
 <script>
 
@@ -69,39 +119,54 @@ export default {
                 {
                     id: 0,
                     name: "Первый адрес",
-                    url: require('~/components/TheProjects/image1.jpg')
+                    src: require('~/components/TheProjects/image1.jpg')
                 },
                 {
                     id: 1,
                     name: "Второй адрес",
-                    url: require('~/components/TheProjects/image2.jpg')
+                    src: require('~/components/TheProjects/image2.jpg')
                 },
                 {
                     id: 2,
                     name: "Третий адрес",
-                    url: require('~/components/TheProjects/image3.jpg')
+                    src: require('~/components/TheProjects/image3.jpg')
                 },
                 {
                     id: 3,
                     name: "Новокузнецкий драматический театр, 540 м2",
-                    url: require('~/components/TheProjects/image4.jpg')
+                    src: require('~/components/TheProjects/image4.jpg')
                 }
             
             ],
             choseImage : 1,
+            timer: null,
         };
         
     },
- created() {
-this.startInterval();
+ mounted() {
+this.start();
  },
     methods : {
-    startInterval () {
-        setInterval(() =>{
-            this.choseImage++;
-            console.log(this.choseImage);
-        },4000);
-    }
-    } 
+    start(){
+        this.timer = setInterval(this.next, 4000);
+    },
+    next(){
+        this.choseImage++;
+        console.log(this.timer);
+    },
+    prev(){
+        this.choseImage--;
+    },
+    stop(){
+        clearInterval(this.timer);
+        this.timer = null;
+    },
+    
+    },
+//     computed:{
+// showID(){
+//         return this.name;
+//     }
+//     } 
 };
 </script>
