@@ -16,10 +16,7 @@
         <!-- <Slides :image="images[Math.abs(choseImage) % images.length]"/> -->
           <img 
           :src="images[Math.abs(choseImage) % images.length].src"
-          
           />      
-         
-         
           <div class="text">
           {{images[Math.abs(choseImage) % images.length].name}}
           </div>
@@ -55,7 +52,7 @@ v-on:click="next"
      font-size: 27px;
  }
  .main{
-     margin-bottom: 80px;
+     margin-bottom: 70px;
      line-height: 20px;
  }
  .library{
@@ -75,7 +72,7 @@ v-on:click="next"
  }
 .buttons{
     position: relative;
-    bottom: 290px;
+    bottom: 295px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -138,12 +135,12 @@ export default {
                 }
             
             ],
-            choseImage : 1,
+            choseImage : 0,
             timer: null,
         };
         
     },
- mounted() {
+created() {
 this.start();
  },
     methods : {
@@ -152,21 +149,17 @@ this.start();
     },
     next(){
         this.choseImage++;
-        console.log(this.timer);
+        console.log(this.choseImage);
     },
     prev(){
         this.choseImage--;
+        console.log(this.choseImage);
     },
     stop(){
         clearInterval(this.timer);
         this.timer = null;
     },
-    
     },
-//     computed:{
-// showID(){
-//         return this.name;
-//     }
-//     } 
+   
 };
 </script>
