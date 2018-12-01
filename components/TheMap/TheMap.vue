@@ -46,5 +46,8 @@ h1{
     justify-content: space-between;
     max-width: 660px;
 }
+.container{
+    margin-bottom: 30px;
+}
 </style>
 
