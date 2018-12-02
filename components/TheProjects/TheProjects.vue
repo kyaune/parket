@@ -40,6 +40,7 @@ v-on:click="next"
 >
 </div>
 </div>
+<button v-on:click="next">Next</button>
 </div>
  </template>
  <style scoped>
@@ -116,7 +117,7 @@ export default {
                 {
                     id: 0,
                     name: "Первый адрес",
-                    src: require('~/components/TheProjects/image1.jpg')
+                    src: require('~/components/TheProjects/image1.jpg') 
                 },
                 {
                     id: 1,
@@ -135,12 +136,18 @@ export default {
                 }
             
             ],
-            choseImage : 0,
+            choseImage : 2,
             timer: null,
         };
         
     },
-created() {
+    computed: {
+        propertyComputed: function() {
+            console.log("Ive been updated");
+            return this.choseImage;
+        }
+    },
+computed() {
 this.start();
  },
     methods : {
