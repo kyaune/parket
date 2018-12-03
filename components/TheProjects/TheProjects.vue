@@ -153,7 +153,7 @@ export default {
             return this.choseImage;
         }
     },
-created() {
+mounted() {
 this.start();
  },
     methods : {
