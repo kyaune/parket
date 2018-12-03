@@ -1,3 +1,5 @@
+
+
 <template>
      <div class="main">
          <div class="info">
@@ -40,7 +42,7 @@ v-on:click="next"
 >
 </div>
 </div>
-<button v-on:click="next">Next</button>
+<!-- <button v-on:click="next">Next</button> -->
 </div>
  </template>
  <style scoped>
@@ -86,20 +88,24 @@ v-on:click="next"
      opacity: 0.1;
  }
  .text{
+     display:flex;
+     flex-direction: row;
+     justify-content: center;
     font-size: 13px;
-    text-align: center;
     padding-top: 10px;
 }
  .component-fade-enter-active, .componet-fade-leave-active {
  transition: all .8s ease;
  /* opacity: 1; */
  position: absolute;
- /* overflow: visible; */
+ overflow: visible;
+ /* visibility: visible; */
 }
 .component-fade-enter, .component-fade-leave-to {
-    transform: translateX(-20px);
- opacity: 0;
- /* overflow: hidden; */
+    transform: translateX(-40px);
+ /* opacity: 0; */
+ overflow: hidden;
+ /* visibil ity: hidden; */
 }
 
 
@@ -136,18 +142,18 @@ export default {
                 }
             
             ],
-            choseImage : 2,
+            choseImage : 0,
             timer: null,
         };
         
     },
     computed: {
         propertyComputed: function() {
-            console.log("Ive been updated");
+            // console.log("Ive been updated");
             return this.choseImage;
         }
     },
-computed() {
+created() {
 this.start();
  },
     methods : {

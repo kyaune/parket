@@ -1,13 +1,22 @@
 <template>
     <div class="main">
+    
         <div class="description">
             <div class="description-1">Выберите дизайн напольного покрытия,</div>
             <div class="description-2">остальное мы сделаем сами</div>
         </div>
         <div class="callback">
-            <div class="callback-button"><button type="button">Заказать обратный звонок</button></div>
-            <div class="callback-info">Поможем рассчитать стоимость и сроки. Проконсультируем какой вариант покрытия подойдет именно вам.</div>
+            <div class="callback-button"><button type="button"
+            v-on:click="showModal = true"
+            >
+            Заказать обратный звонок
+            </button></div>
+            <div class="callback-info">Поможем рассчитать стоимость и сроки. 
+            Проконсультируем какой вариант покрытия подойдет именно вам.
+            </div>
+            <modal v-if="showModal" @close="showModal = false">
         </div>
+        
     </div>
 </template>
 
@@ -42,5 +51,18 @@ cursor: pointer;
     font-weight: 800;
 }
 </style>
+
+<script>
+import modal from '@/components/TheCallback/TheModal.vue'
+export default {
+components :{
+        modal
+    },
+    data: {
+        showModale: false
+    }
+}
+</script>
+
 
 
