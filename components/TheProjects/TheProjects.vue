@@ -162,11 +162,11 @@ this.start();
     },
     next(){
         this.choseImage++;
-        console.log(this.choseImage);
+        // console.log(this.choseImage);
     },
     prev(){
         this.choseImage--;
-        console.log(this.choseImage);
+        // console.log(this.choseImage);
     },
     stop(){
         clearInterval(this.timer);

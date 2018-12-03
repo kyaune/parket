@@ -7,14 +7,15 @@
         </div>
         <div class="callback">
             <div class="callback-button"><button type="button"
-            v-on:click="showModal = true"
+            v-on:click="change"
             >
             Заказать обратный звонок
             </button></div>
             <div class="callback-info">Поможем рассчитать стоимость и сроки. 
             Проконсультируем какой вариант покрытия подойдет именно вам.
             </div>
-            <modal v-if="showModal" @close="showModal = false">
+            <TheModal v-if="showModal" @close="showModal = false">
+            </TheModal>
         </div>
         
     </div>
@@ -53,13 +54,21 @@ cursor: pointer;
 </style>
 
 <script>
-import modal from '@/components/TheCallback/TheModal.vue'
+import TheModal from '@/components/TheCallback/TheModal.vue'
 export default {
 components :{
-        modal
+        TheModal
     },
-    data: {
+    data() {
+        return {
         showModale: false
+        }
+    },
+    methods: {
+        change(){
+            console.log(showModale);
+            return !showModale;
+        }
     }
 }
 </script>
