@@ -1,4 +1,5 @@
 <template>
+<div class="containet">
     <div class="main">
     
         <div class="description">
@@ -7,17 +8,19 @@
         </div>
         <div class="callback">
             <div class="callback-button"><button type="button"
-            v-on:click="change"
-            >
+            v-on:click="isShown = true">
             Заказать обратный звонок
-            </button></div>
+            </button>
+            </div>
             <div class="callback-info">Поможем рассчитать стоимость и сроки. 
             Проконсультируем какой вариант покрытия подойдет именно вам.
             </div>
-            <TheModal v-if="showModal" @close="showModal = false">
-            </TheModal>
         </div>
         
+    </div>
+    <div class="popup" v-if="isShown">
+               111111919929290219219021921092
+    </div>
     </div>
 </template>
 
@@ -51,27 +54,31 @@ cursor: pointer;
 .description-1{
     font-weight: 800;
 }
+.popup{
+    /* width: 100vw;
+    height: 100vh; */
+    background-color: rgba(0, 0, 0, 100);
+    z-index: 2;
+    position: relative;
+    /* top:-600px; */
+}
 </style>
-
 <script>
-import TheModal from '@/components/TheCallback/TheModal.vue'
 export default {
-components :{
-        TheModal
-    },
     data() {
         return {
-        showModale: false
-        }
+            isShown:false
+        };
     },
     methods: {
         change(){
-            console.log(showModale);
-            return !showModale;
+          this.isShown = !this.isShown;
+          console.log(this.isShown);
         }
     }
 }
 </script>
+
 
 
 

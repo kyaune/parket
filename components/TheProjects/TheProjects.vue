@@ -14,8 +14,6 @@
         >
         <transition name="component-fade" mode="out-in">
         <div class="slider"  v-bind:key="choseImage">
-        
-        <!-- <Slides :image="images[Math.abs(choseImage) % images.length]"/> -->
           <img 
           :src="images[Math.abs(choseImage) % images.length].src"
           />      
@@ -42,7 +40,7 @@ v-on:click="next"
 >
 </div>
 </div>
-<!-- <button v-on:click="next">Next</button> -->
+<button v-on:click="next">Next</button>
 </div>
  </template>
  <style scoped>
@@ -96,27 +94,22 @@ v-on:click="next"
 }
  .component-fade-enter-active, .componet-fade-leave-active {
  transition: all .8s ease;
- /* opacity: 1; */
+ 
  position: absolute;
  overflow: visible;
- /* visibility: visible; */
+ 
 }
 .component-fade-enter, .component-fade-leave-to {
     transform: translateX(-40px);
- /* opacity: 0; */
+ 
  overflow: hidden;
- /* visibil ity: hidden; */
+ 
 }
 
 
  </style>
 <script>
-
-import Slides from '@/components/TheProjects/Slides.vue'
 export default {
-    components :{
-        Slides
-    },
     data() {
         return {
             images: [
@@ -153,7 +146,7 @@ export default {
             return this.choseImage;
         }
     },
-mounted() {
+created() {
 this.start();
  },
     methods : {
