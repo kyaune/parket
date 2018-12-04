@@ -8,7 +8,7 @@
         </div>
         <div class="callback">
             <div class="callback-button"><button type="button"
-            v-on:click="isShown = true">
+            v-on:click="change">
             Заказать обратный звонок
             </button>
             </div>
@@ -18,9 +18,10 @@
         </div>
         
     </div>
-    <div class="popup" v-if="isShown">
-               111111919929290219219021921092
-    </div>
+    <transition name="component-fade" mode="out-in">
+    <popup v-if="isShown">
+    </popup>
+    </transition>
     </div>
 </template>
 
@@ -59,12 +60,28 @@ cursor: pointer;
     height: 100vh; */
     background-color: rgba(0, 0, 0, 100);
     z-index: 2;
-    position: relative;
-    /* top:-600px; */
+    /* margin-top: -600px; */
+}
+.component-fade-enter-active, .componet-fade-leave-active {
+ transition: all .8s ease;
+ opacity: 1;
+ /* position: absolute; */
+ overflow: visible;
+ 
+}
+.component-fade-enter, .component-fade-leave-to {
+    /* transform: translateX(-40px); */
+ opacity: 0.3;
+ overflow: hidden;
+ 
 }
 </style>
 <script>
+import popup from '@/components/TheCallback/popup.vue'
 export default {
+    components: {
+        popup,
+    },
     data() {
         return {
             isShown:false

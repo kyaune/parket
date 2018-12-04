@@ -40,7 +40,6 @@ v-on:click="next"
 >
 </div>
 </div>
-<button v-on:click="next">Next</button>
 </div>
  </template>
  <style scoped>
@@ -105,8 +104,6 @@ v-on:click="next"
  overflow: hidden;
  
 }
-
-
  </style>
 <script>
 export default {
@@ -155,7 +152,7 @@ this.start();
     },
     next(){
         this.choseImage++;
-        // console.log(this.choseImage);
+        console.log(this.choseImage);
     },
     prev(){
         this.choseImage--;
