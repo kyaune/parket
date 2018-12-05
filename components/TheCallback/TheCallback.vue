@@ -19,7 +19,10 @@
         
     </div>
     <transition name="component-fade" mode="out-in">
-    <popup v-if="isShown">
+    <popup v-if="isShown"
+    v-on-clickaway="change"
+    @click="change"
+    >
     </popup>
     </transition>
     </div>
@@ -78,7 +81,11 @@ cursor: pointer;
 </style>
 <script>
 import popup from '@/components/TheCallback/popup.vue'
+import { directive as onClickaway } from 'vue-clickaway';
 export default {
+     directives: {
+    onClickaway: onClickaway,
+  },
     components: {
         popup,
     },
@@ -91,7 +98,10 @@ export default {
         change(){
           this.isShown = !this.isShown;
           console.log(this.isShown);
-        }
+        },
+        away: function() {
+          console.log('clicked away');
+    },
     }
 }
 </script>

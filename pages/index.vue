@@ -9,9 +9,9 @@
     <TheContacts/>
     <TheMap/>
     </div>
-    </div>
-    <TheFooter/>
-    </div>
+  </div>
+  <TheFooter/>
+</div>
 </template>
 
 <script>
@@ -37,10 +37,21 @@ export default {
 </script>
 
 <style>
+.container{
+ width: 100%;
+ margin-left: 0px;
+ margin-right: 0px; 
+ padding-left: 0px;
+ padding-right: 0px;
+ font-family: sans-serif;
+ 
+}
+
 .main-index {
  font-size: 28px;
  max-width: 880px;
  margin-top: 70px;
+ /* margin-left: 20%; */
 }
 
 .wrapper{

@@ -30,8 +30,8 @@
     flex-direction: row;
     flex: 220px;
     justify-content: space-between;
-    margin-left: -15px;
-    margin-right: -15px;
+    /* margin-left: -15px;
+    margin-right: -15px; */
     margin-bottom: 90px;
 }
 .logo{

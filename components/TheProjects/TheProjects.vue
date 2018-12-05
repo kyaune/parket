@@ -7,22 +7,26 @@
              <p>квартиры, офисы, фитнес клубы</p>
  <p>и новокузнецкий драматический театр</p>
          </div>
-         
+         <div class="carousel">
         <div class="library"
          v-on:mouseover="stop"
         v-on:mouseout="start"
         >
-        <transition name="component-fade" mode="out-in">
+        
+        
         <div class="slider"  v-bind:key="choseImage">
+            <transition name="fade" mode="in-out">
           <img 
           :src="images[Math.abs(choseImage) % images.length].src"
-          />      
+          />    
+          </transition>  
           <div class="text">
           {{images[Math.abs(choseImage) % images.length].name}}
           </div>
          
         </div>
-        </transition>
+        
+        </div>
         </div>
          
         <div class="buttons"
@@ -61,6 +65,10 @@ v-on:click="next"
      flex-direction: column;
      min-height: 500px;
  }
+ .carousel {
+     min-width: 887px;
+     min-height: 466px;
+ }
  .library img{
   width: 887px;
   height: 466px;
@@ -91,21 +99,17 @@ v-on:click="next"
     font-size: 13px;
     padding-top: 10px;
 }
- .component-fade-enter-active, .componet-fade-leave-active {
- transition: all .8s ease;
- 
- position: absolute;
- overflow: visible;
- 
+ .fade-enter-active, .fade-leave-active {
+    transition: all .8s ease;
+    position: absolute;
 }
-.component-fade-enter, .component-fade-leave-to {
-    transform: translateX(-40px);
- 
- overflow: hidden;
- 
+.fade-enter, .fade-leave-to {
+    transform: translateX(-140px);
+    overflow: hidden;
 }
  </style>
 <script>
+
 export default {
     data() {
         return {
@@ -152,7 +156,7 @@ this.start();
     },
     next(){
         this.choseImage++;
-        console.log(this.choseImage);
+        // console.log(this.choseImage);
     },
     prev(){
         this.choseImage--;
