@@ -30,12 +30,12 @@
         v-on:mouseout="start"
         >
 <div class="button-prev">
-<img src="@/static/back.svg"
+<img src="@/static/buttons/back.svg"
 v-on:click="prev"
 >
 </div>
 <div class="button-next">
-<img src="@/static/next.svg"
+<img src="@/static/buttons/next.svg"
 v-on:click="next"
 >
 </div>
@@ -113,22 +113,22 @@ export default {
                 {
                     id: 0,
                     name: "Первый адрес",
-                    src: require('~/components/TheProjects/image1.jpg') 
+                    src: require('~/static/projects/image1.jpg') 
                 },
                 {
                     id: 1,
                     name: "Второй адрес",
-                    src: require('~/components/TheProjects/image2.jpg')
+                    src: require('~/static/projects/image2.jpg')
                 },
                 {
                     id: 2,
                     name: "Третий адрес",
-                    src: require('~/components/TheProjects/image3.jpg')
+                    src: require('~/static/projects/image3.jpg')
                 },
                 {
                     id: 3,
                     name: "Новокузнецкий драматический театр, 540 м2",
-                    src: require('~/components/TheProjects/image4.jpg')
+                    src: require('~/static/projects/image4.jpg')
                 }
             
             ],

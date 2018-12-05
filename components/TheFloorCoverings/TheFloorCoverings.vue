@@ -97,32 +97,32 @@ export default {
             parkets: [
                 {
                     name: "Перго",
-                    image: 'pergo.jpg',
+                    image: require('~/static/parket/pergo.jpg'),
                     price: "420"
                 },
                 {
                      name: "Аберхоф",
-                    image: 'aberchof.jpg',
+                    image: '~/static/parket/aberchof.jpg',
                     price: "530"
                 },
                 {
                      name: "Квик степ",
-                    image: 'quick_step.jpg',
+                    image: '~/static/parket/quick_step.jpg',
                     price: "380"
                 },
                 {
                      name: "Таркетт",
-                    image: 'tarkett.jpg',
+                    image: '~/static/parket/tarkett.jpg',
                     price: "610"
                 },
                 {
                      name: "Мейстер",
-                    image: 'meister.jpg',
+                    image: '~/static/parket/meister.jpg',
                     price: "390"
                 },
                 {
                      name: "Аллер",
-                    image: 'aller.jpg',
+                    image: '~/static/parket/aller.jpg',
                     price: "470"
                 }
             

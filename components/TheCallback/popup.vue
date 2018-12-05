@@ -24,7 +24,7 @@
 .main{
     
     background-color:rgb(243, 238, 231);
-    position: fixed;
+    position: absolute;
     overflow: hidden;
     top: 200px;
     margin-left: 100px;
@@ -32,7 +32,7 @@
 }
 .container{
     width: 400px;
-    height: 400px;
+    height: 350px;
     border-width: 10px;
     border-radius: 8px;
     border-color: green;
