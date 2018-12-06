@@ -7,11 +7,11 @@
                     
                     <div class="survey-name" autofocus>
                         <h2>Как Вас зовут?</h2>
-                    <input type="text" placeholder="Ваше имя">
+                    <input type="text" placeholder="Ваше имя" id="input-form">
                     </div>
                     <div class="survey-email">
                         <h2>Как с Вами связаться?</h2>
-                    <input type="email" placeholder="Ваш почтовый адрес">
+                    <input type="email" placeholder="Ваш почтовый адрес" id="input-form">
                     </div>
                     <div class="submit-form">
                     <input type="submit" value="Отправить" id="sub-button">
@@ -46,8 +46,8 @@ h1{
 }
 h2{
     font-size: 18px;
-    /* margin-top: 5px; */
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 4px;
 }
 .submit-form{
     margin-top: 10px;
@@ -57,11 +57,20 @@ h2{
     border-width: 4px;
     border-radius: 2px;
     border-style: solid;
-    border-color:rgb(56, 153, 56);
+    border-color:rgb(19, 70, 19);
+    font-size: 14px;
+    width: 110px;
+    height: 30px;
+    font-weight: 600;
 }
 .survey{
   margin-left: 10px;
-   
+}
+input{
+    width: 230px;
+    height: 25px;
+    border: 2px solid green;
+    border-radius: 4px;
 }
 </style>
 

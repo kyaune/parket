@@ -59,25 +59,41 @@ cursor: pointer;
     font-weight: 800;
 }
 .popup{
-    /* width: 100vw;
-    height: 100vh; */
     background-color: rgba(0, 0, 0, 100);
     z-index: 2;
-    /* margin-top: -600px; */
 }
-.component-fade-enter-active, .componet-fade-leave-active {
+.component-fade-enter-active {
  transition: all .8s ease;
  opacity: 1;
- /* position: absolute; */
  overflow: visible;
- 
+ /* transform: translateX(40px); */
 }
-.component-fade-enter, .component-fade-leave-to {
-    /* transform: translateX(-40px); */
+.component-fade-enter{
+ transform: translateX(-100px);
  opacity: 0.3;
  overflow: hidden;
- 
 }
+.component-fade-enter-to{
+ /* transform: translateX(40px); */
+ opacity: 1;
+ overflow: visible;
+}
+.componet-fade-leave-active {
+ transition: all .8s ease;
+ opacity: 0.3;
+ /* overflow: hidden; */
+}
+.component-fade-leave {
+ transform: translateX(0px);
+ opacity: 1;
+ overflow: visible;
+}
+.component-fade-leave-to {
+ transform: translateX(40px);
+ opacity: 0.3;
+ overflow: hidden;
+}
+
 </style>
 <script>
 import popup from '@/components/TheCallback/popup.vue'

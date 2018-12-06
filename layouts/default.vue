@@ -1,8 +1,11 @@
 <template>
-  <div>
+  <div class="main">
     <nuxt/>
   </div>
 </template>
 
-<style>
+<style scoped>
+template{
+ margin: 0px 0px 0px 0px;
+}
 </style>

@@ -14,6 +14,7 @@
             
             </ul>
         </div>
+        <transition name="component-fade">
         <div class="library">
             <ul>
                 <li v-for="element in selectedArray"
@@ -35,6 +36,7 @@
                 </li>
             </ul>
         </div>
+        </transition>
     </div>
 </template>
 
@@ -85,6 +87,13 @@ ul{
 img {
     width: 233px;
     height: 233px;
+}
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: all .5s ease;
+  opacity: 1;
+}
+.component-fade-enter, .component-fade-leave-to {
+  opacity: 0;
 }
 
 </style>
@@ -158,7 +167,7 @@ export default {
                       laminat: [
                 {
                     name: "11",
-                    image: require('~/static/parket/pergo.jpg'),
+                    image: require('~/static/parket/aller.jpg'),
                     price: "420"
                 },
                 {
@@ -191,7 +200,7 @@ export default {
                       plitka: [
                 {
                     name: "22",
-                    image: require('~/static/parket/pergo.jpg'),
+                    image: require('~/static/parket/aller.jpg'),
                     price: "420"
                 },
                 {
@@ -224,7 +233,7 @@ export default {
                       kovrolin: [
                 {
                     name: "44",
-                    image: require('~/static/parket/pergo.jpg'),
+                    image: require('~/static/parket/aller.jpg'),
                     price: "420"
                 },
                 {

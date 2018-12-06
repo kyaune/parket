@@ -13,7 +13,7 @@
         v-on:mouseout="start"
         >
         
-        <transition name="component-fade" mode="in-out">
+        <transition name="component-fade">
         <div class="slider"  v-bind:key="choseImage">
             
           <img 
@@ -99,15 +99,35 @@ v-on:click="next"
     font-size: 13px;
     padding-top: 10px;
 }
- .component-fade-enter-active, .component-fade-leave-active {
+ .component-fade-enter-active{
     transition: all .8s ease;
     position: absolute;
+    overflow:visible;
 }
-.component-fade-enter, .component-fade-leave-to {
-    /* transform: translateX(10px); */
-    opacity: 0.3;
+.component-fade-enter-to{
+    transform: translateX(0px);
+    overflow: visible;
+    opacity: 1;
+}
+.component-fade-enter{
+    transform: translateX(-80px);
     overflow: hidden;
-    /* visibility: hidden; */
+    opacity: 0.8;
+}
+.component-fade-leave-active {
+    transition: all .6s ease;
+    position: absolute;
+    overflow: hidden;
+}
+.component-fade-leave {
+/* transform: translateX(0px); */
+overflow: visible;
+opacity: 1;
+}
+.component-fade-leave-to {
+/* transform: translateX(80px); */
+opacity: 0.8;
+overflow: hidden;
 }
 
  </style>
