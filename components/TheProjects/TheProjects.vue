@@ -13,19 +13,19 @@
         v-on:mouseout="start"
         >
         
-        
+        <transition name="component-fade" mode="in-out">
         <div class="slider"  v-bind:key="choseImage">
-            <transition name="fade" mode="in-out">
+            
           <img 
           :src="images[Math.abs(choseImage) % images.length].src"
           />    
-          </transition>  
+          
           <div class="text">
           {{images[Math.abs(choseImage) % images.length].name}}
           </div>
-         
+            
         </div>
-        
+        </transition> 
         </div>
         </div>
          
@@ -99,14 +99,17 @@ v-on:click="next"
     font-size: 13px;
     padding-top: 10px;
 }
- .fade-enter-active, .fade-leave-active {
+ .component-fade-enter-active, .component-fade-leave-active {
     transition: all .8s ease;
     position: absolute;
 }
-.fade-enter, .fade-leave-to {
-    transform: translateX(-140px);
+.component-fade-enter, .component-fade-leave-to {
+    /* transform: translateX(10px); */
+    opacity: 0.3;
     overflow: hidden;
+    /* visibility: hidden; */
 }
+
  </style>
 <script>
 
@@ -143,7 +146,6 @@ export default {
     },
     computed: {
         propertyComputed: function() {
-            // console.log("Ive been updated");
             return this.choseImage;
         }
     },
@@ -156,11 +158,9 @@ this.start();
     },
     next(){
         this.choseImage++;
-        // console.log(this.choseImage);
     },
     prev(){
         this.choseImage--;
-        // console.log(this.choseImage);
     },
     stop(){
         clearInterval(this.timer);
