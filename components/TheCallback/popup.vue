@@ -35,7 +35,7 @@
     height: 300px;
     border-width: 10px;
     border-radius: 8px;
-    border-color: green;
+    border-color: rgb(75, 175, 75);
     border-style: solid;
     font-size: 22px;
 }
@@ -53,11 +53,11 @@ h2{
     margin-top: 10px;
 }
 #sub-button{
-    background-color: rgb(83, 177, 83);
+    background-color: rgb(93, 216, 93);
     border-width: 4px;
     border-radius: 2px;
     border-style: solid;
-    border-color:rgb(19, 70, 19);
+    border-color:rgb(108, 238, 108);
     font-size: 14px;
     width: 110px;
     height: 30px;
@@ -69,7 +69,7 @@ h2{
 input{
     width: 230px;
     height: 25px;
-    border: 2px solid green;
+    border: 2px solid rgb(101, 214, 101);
     border-radius: 4px;
 }
 </style>

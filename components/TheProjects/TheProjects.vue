@@ -57,7 +57,7 @@ v-on:click="next"
  }
  .main{
      margin-bottom: 70px;
-     line-height: 20px;
+     line-height:1.2;
  }
  .library{
      margin-top: 45px;

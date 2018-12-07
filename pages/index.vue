@@ -1,3 +1,4 @@
+
 <template>
 <div class="container">
   <div class="wrapper">
@@ -22,6 +23,7 @@ import TheFloorCoverings from '@/components/TheFloorCoverings/TheFloorCoverings.
 import TheContacts from '@/components/TheContacts/TheContacts.vue'
 import TheFooter from '@/components/TheFooter/TheFooter.vue'
 import TheMap from '@/components/TheMap/TheMap.vue'
+require('@/components/reset.css')
 
 export default {
   components: {
@@ -34,9 +36,11 @@ export default {
     TheMap
   }
 }
+
 </script>
 
 <style>
+
 .container{
  width: 100%;
  margin-left: 0px;
@@ -44,7 +48,7 @@ export default {
  padding-left: 0px;
  padding-right: 0px;
  font-family: sans-serif;
- 
+ line-height: 1.3;
 }
 
 .main-index {
