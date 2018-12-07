@@ -1,17 +1,23 @@
 <template>
     <div class="main">
         <div class="container">
-            <form>
+            <form
+            @submit.prevent="processForm"
+            >
                 <h1>Оставьте, пожалуйста, свои данные, чтобы помочь нам связаться с Вами</h1>
                 <div class="survey">
                     
                     <div class="survey-name" autofocus>
                         <h2>Как Вас зовут?</h2>
-                    <input type="text" placeholder="Ваше имя" id="input-form">
+                    <input type="text" placeholder="Ваше имя" id="input-form"
+                    v-model="name"
+                    >
                     </div>
                     <div class="survey-email">
                         <h2>Как с Вами связаться?</h2>
-                    <input type="email" placeholder="Ваш почтовый адрес" id="input-form">
+                    <input type="email" placeholder="Ваш почтовый адрес" id="input-form" 
+                    v-model="email"
+                    >
                     </div>
                     <div class="submit-form">
                     <input type="submit" value="Отправить" id="sub-button">
@@ -21,6 +27,23 @@
         </div>
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+        name: '',
+        email: ''
+        };
+    },
+    methods: {
+        processForm(){
+            console.log('name:', this.name, 'email:', this.email);
+            alert("Processing!");
+        }
+    }
+}
+</script>
+
 <style scoped>
 .main{
     background-color:rgb(243, 238, 231);
@@ -40,8 +63,8 @@
     font-size: 22px;
 }
 h1{
-    font-size: 24px;
-    font-weight: 900;
+    font-size: 22px;
+    font-weight: 600;
     text-align: center;
 }
 h2{

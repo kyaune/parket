@@ -44,7 +44,7 @@
     font-weight: bold;
 }
 .main-name-2{
-    color: lightgreen;
+    color: #59c339;
 }
 .contacts{
    margin-left: 20%;
