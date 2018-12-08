@@ -1,26 +1,26 @@
 <template>
     <div class="main">
         <div class="container">
-            <form
-            @submit.prevent="processForm"
-            >
+            <form action="https://formspree.io/kyaune@gmail.com" method="POST">
+            
+            
                 <h1>Оставьте, пожалуйста, свои данные, чтобы помочь нам связаться с Вами</h1>
                 <div class="survey">
                     
                     <div class="survey-name" autofocus>
                         <h2>Как Вас зовут?</h2>
-                    <input type="text" placeholder="Ваше имя" id="input-form"
+                    <input type="text" placeholder="Ваше имя" id="input-form" name="name"
                     v-model="name"
                     >
                     </div>
                     <div class="survey-email">
                         <h2>Как с Вами связаться?</h2>
-                    <input type="email" placeholder="Ваш почтовый адрес" id="input-form" 
+                    <input type="email" placeholder="Ваш почтовый адрес" id="input-form" name="email"
                     v-model="email"
                     >
                     </div>
                     <div class="submit-form">
-                    <input type="submit" value="Отправить" id="sub-button">
+                    <input type="submit" value="Send" id="sub-button">
                     </div>
                 </div>
             </form>

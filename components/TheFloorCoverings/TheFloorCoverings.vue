@@ -167,32 +167,32 @@ export default {
                       laminat: [
                 {
                     name: "11",
-                    image: require('~/static/parket/aller.jpg'),
+                    image: require('~/static/laminat/laminat1.jpg'),
                     price: "420"
                 },
                 {
                      name: "11",
-                    image: require('~/static/parket/aberchof.jpg'),
+                    image: require('~/static/laminat/laminat2.jpg'),
                     price: "530"
                 },
                 {
                      name: "11 степ",
-                    image: require('~/static/parket/quick_step.jpg'),
+                    image: require('~/static/laminat/laminat3.jpg'),
                     price: "380"
                 },
                 {
                      name: "11",
-                    image: require('~/static/parket/tarkett.jpg'),
+                    image: require('~/static/laminat/laminat4.jpg'),
                     price: "610"
                 },
                 {
                      name: "11",
-                    image: require('~/static/parket/meister.jpg'),
+                    image: require('~/static/laminat/laminat5.jpg'),
                     price: "390"
                 },
                 {
                      name: "11",
-                    image: require('~/static/parket/aller.jpg'),
+                    image: require('~/static/laminat/laminat6.jpg'),
                     price: "470"
                 }
             
@@ -200,32 +200,32 @@ export default {
                       plitka: [
                 {
                     name: "22",
-                    image: require('~/static/parket/aller.jpg'),
+                    image: require('~/static/plitka/plitka1.jpg'),
                     price: "420"
                 },
                 {
                      name: "22",
-                    image: require('~/static/parket/aberchof.jpg'),
+                    image: require('~/static/plitka/plitka2.jpg'),
                     price: "530"
                 },
                 {
                      name: "22 степ",
-                    image: require('~/static/parket/quick_step.jpg'),
+                    image: require('~/static/plitka/plitka3.jpg'),
                     price: "380"
                 },
                 {
                      name: "33",
-                    image: require('~/static/parket/tarkett.jpg'),
+                    image: require('~/static/plitka/plitka4.jpg'),
                     price: "610"
                 },
                 {
                      name: "33",
-                    image: require('~/static/parket/meister.jpg'),
+                    image: require('~/static/plitka/plitka5.jpeg'),
                     price: "390"
                 },
                 {
                      name: "33",
-                    image: require('~/static/parket/aller.jpg'),
+                    image: require('~/static/plitka/plitka6.jpg'),
                     price: "470"
                 }
             
@@ -233,32 +233,32 @@ export default {
                       kovrolin: [
                 {
                     name: "44",
-                    image: require('~/static/parket/aller.jpg'),
+                    image: require('~/static/kovrolin/kovrolin1.jpg'),
                     price: "420"
                 },
                 {
                      name: "44",
-                    image: require('~/static/parket/aberchof.jpg'),
+                    image: require('~/static/kovrolin/kovrolin2.jpg'),
                     price: "530"
                 },
                 {
                      name: "44 степ",
-                    image: require('~/static/parket/quick_step.jpg'),
+                    image: require('~/static/kovrolin/kovrolin3.jpg'),
                     price: "380"
                 },
                 {
                      name: "44",
-                    image: require('~/static/parket/tarkett.jpg'),
+                    image: require('~/static/kovrolin/kovrolin4.jpg'),
                     price: "610"
                 },
                 {
                      name: "44",
-                    image: require('~/static/parket/meister.jpg'),
+                    image: require('~/static/kovrolin/kovrolin5.jpg'),
                     price: "390"
                 },
                 {
                      name: "44",
-                    image: require('~/static/parket/aller.jpg'),
+                    image: require('~/static/kovrolin/kovrolin6.jpg'),
                     price: "470"
                 }
             
