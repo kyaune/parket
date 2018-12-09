@@ -44,9 +44,89 @@ v-on:click="next"
 >
 </div>
 </div>
+<div class="picker">
+ <div class="squares" 
+        v-for="image in images"
+        :key="image.id"
+        v-on:click="choseImage = image.id"
+        v-bind="[{active : choseImage == image.id}, '']"
+        v-on:mouseover="stop"
+        >
+         
+        </div>
+</div>
 </div>
  </template>
- <style scoped>
+<script>
+
+export default {
+    data() {
+        return {
+            images: [
+                {
+                    id: 0,
+                    name: "Первый адрес",
+                    src: require('~/static/projects/image1.jpg') 
+                },
+                {
+                    id: 1,
+                    name: "Второй адрес",
+                    src: require('~/static/projects/image2.jpg')
+                },
+                {
+                    id: 2,
+                    name: "Третий адрес",
+                    src: require('~/static/projects/image3.jpg')
+                },
+                {
+                    id: 3,
+                    name: "Новокузнецкий драматический театр, 540 м2",
+                    src: require('~/static/projects/image4.jpg')
+                }
+            
+            ],
+            choseImage : 0,
+            currentCircle: 0,
+            timer: null,
+            isActive : false,
+            active : {
+                backgroundColor: 'rgba(0, 0, 0, 0.92)',
+            },
+        };
+        
+    },
+    computed: {
+        propertyComputed: function() {
+            return this.choseImage;
+        }
+    },
+created() {
+this.start();
+ },
+    methods : {
+    start(){
+        this.timer = setInterval(this.next, 4000);
+    },
+    next(){
+        this.choseImage++;
+    },
+    prev(){
+        this.choseImage--;
+    },
+    stop(){
+        clearInterval(this.timer);
+        this.timer = null;
+    },
+    change(){
+        this.isActive = !this.isActive;
+        console.log(this.currentCircle);
+         }
+    },
+   
+};
+</script>
+
+<style scoped>
 
  h1{
      font-size: 27px;
@@ -93,9 +173,7 @@ v-on:click="next"
      opacity: 0.1;
  }
  .text{
-     display:flex;
-     flex-direction: row;
-     justify-content: center;
+    text-align: center;
     font-size: 13px;
     padding-top: 10px;
 }
@@ -129,64 +207,31 @@ opacity: 1;
 opacity: 0.8;
 overflow: hidden;
 }
+.picker{
+    width: 56px;
+    height: 10px;
+    position: relative;
+    top: -30px;
+    margin-left: 47%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.squares{
+    /* top: 400px; */
+    width: 8px;
+    height: 8px;
+    position: relative;
+    background-color: 255;
+    border-radius: 50%;
+    border-width: 2px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.32);
+}
+.squares:hover{
+    background-color: rgba(0, 0, 0, 0.42);
+}
+.active{
+    background-color: rgba(0, 0, 0, 0.92);  
+}
 
  </style>
-<script>
-
-export default {
-    data() {
-        return {
-            images: [
-                {
-                    id: 0,
-                    name: "Первый адрес",
-                    src: require('~/static/projects/image1.jpg') 
-                },
-                {
-                    id: 1,
-                    name: "Второй адрес",
-                    src: require('~/static/projects/image2.jpg')
-                },
-                {
-                    id: 2,
-                    name: "Третий адрес",
-                    src: require('~/static/projects/image3.jpg')
-                },
-                {
-                    id: 3,
-                    name: "Новокузнецкий драматический театр, 540 м2",
-                    src: require('~/static/projects/image4.jpg')
-                }
-            
-            ],
-            choseImage : 0,
-            timer: null,
-        };
-        
-    },
-    computed: {
-        propertyComputed: function() {
-            return this.choseImage;
-        }
-    },
-created() {
-this.start();
- },
-    methods : {
-    start(){
-        this.timer = setInterval(this.next, 4000);
-    },
-    next(){
-        this.choseImage++;
-    },
-    prev(){
-        this.choseImage--;
-    },
-    stop(){
-        clearInterval(this.timer);
-        this.timer = null;
-    },
-    },
-   
-};
-</script>
