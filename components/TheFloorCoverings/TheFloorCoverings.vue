@@ -57,6 +57,11 @@ ul{
         color: rgb(14, 14, 236);
         font-size: 27px;
 }
+.heading li:hover{
+        cursor: pointer;
+        color: rgb(14, 14, 236, 0.7);
+        font-size: 27px;
+}
 .library ul{
     display: flex;
     flex-direction: row;

@@ -20,12 +20,16 @@
           :src="images[Math.abs(choseImage) % images.length].src"
           />    
           
-          <div class="text">
-          {{images[Math.abs(choseImage) % images.length].name}}
-          </div>
+          
             
         </div>
         </transition> 
+        <transition name="slide">
+        <div class="text" v-bind:key="choseImage">
+          {{images[Math.abs(choseImage) % images.length].name}}
+          </div>
+          </transition> 
+        
         </div>
         </div>
          
@@ -33,15 +37,13 @@
         v-on:mouseover="stop"
         v-on:mouseout="start"
         >
-<div class="button-prev">
-<img src="@/static/buttons/back.svg"
-v-on:click="prev"
->
+<div class="button-prev"
+v-on:click="prev">
+<img src="@/static/buttons/back1.svg">
 </div>
-<div class="button-next">
-<img src="@/static/buttons/next.svg"
-v-on:click="next"
->
+<div class="button-next"
+v-on:click="next">
+<img src="@/static/buttons/next1.svg">
 </div>
 </div>
 <div class="picker">
@@ -167,10 +169,18 @@ this.start();
     padding-left: 7px;
 }
  .buttons img{
+     border-radius: 50%;
      height: 40px;
      width: 40px;
      background-color:rgb(236, 232, 232);
      opacity: 0.1;
+ }
+ .buttons img:hover{
+     opacity: 0.6;
+ }
+ .button-prev{
+ }
+ .button-next{
  }
  .text{
     text-align: center;
@@ -207,6 +217,16 @@ opacity: 1;
 opacity: 0.8;
 overflow: hidden;
 }
+
+.slide-enter-active, .slide-leave-active {
+  transition: all .3s ease;
+  opacity: 1;
+  position: absolute;
+  z-index: -1;
+}
+.slide-enter, .slide-leave-to {
+  opacity: 0.3;
+}
 .picker{
     width: 56px;
     height: 10px;
@@ -231,7 +251,7 @@ overflow: hidden;
     background-color: rgba(0, 0, 0, 0.42);
 }
 .active{
-    background-color: rgba(0, 0, 0, 0.92);  
+    background-color: rgba(0, 0, 0, 0.52);  
 }
 
  </style>

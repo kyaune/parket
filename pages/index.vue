@@ -47,7 +47,7 @@ export default {
  margin-right: 0px; 
  padding-left: 0px;
  padding-right: 0px;
- font-family: sans-serif;
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
  line-height: 1.3;
 }
 
