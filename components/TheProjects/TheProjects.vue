@@ -49,7 +49,7 @@ v-on:click="next"
         v-for="image in images"
         :key="image.id"
         v-on:click="choseImage = image.id"
-        v-bind="[{active : choseImage == image.id}, '']"
+        v-bind:class="{'active' : image.id == (Math.abs(choseImage) % images.length)}"
         v-on:mouseover="stop"
         >
          

@@ -8,6 +8,7 @@
                 <li v-for="coveringName in coveringNames"
                 :key="coveringName.id"
                 @click="selected = coveringName.engname"
+                v-bind:class="{'active' : coveringName.engname == selected}"
                 >
                 {{coveringName.name}}
                 </li>
@@ -53,9 +54,7 @@ ul{
 }
 .heading li{
         cursor: pointer;
-        color: blue;
-        text-decoration: underline;
-        text-decoration-style: dotted;
+        color: rgb(14, 14, 236);
         font-size: 27px;
 }
 .library ul{
@@ -94,6 +93,10 @@ img {
 }
 .component-fade-enter, .component-fade-leave-to {
   opacity: 0;
+}
+.active{
+    text-decoration: underline;
+    text-decoration-style: solid;
 }
 
 </style>
