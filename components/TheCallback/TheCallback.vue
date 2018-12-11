@@ -44,6 +44,7 @@
     max-width: 258px;
     margin-left: 50px;
     font-size: 12px;
+    line-height: 16px;
 }
 button{
 background-color: rgb(0, 120, 255);
@@ -54,6 +55,11 @@ text-align: center;
 border-radius: 6px;
 font-size: 18px;
 cursor: pointer;
+}
+.description{
+    letter-spacing: 1px;
+    font-size: 27px;
+    line-height: 34px;
 }
 .description-1{
     font-weight: 800;

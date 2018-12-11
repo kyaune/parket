@@ -42,6 +42,9 @@
 </template>
 
 <style scoped>
+.main{
+    letter-spacing: 1px;
+}
 
 ul{
     list-style-type:none; 
@@ -51,15 +54,16 @@ ul{
 .description{
     font-size: 27px;
     font-weight: 800;
+    line-height: 34px;
 }
 .heading li{
         cursor: pointer;
-        color: rgb(14, 14, 236);
+        color: rgb(0, 120, 255);
         font-size: 27px;
 }
 .heading li:hover{
         cursor: pointer;
-        color: rgb(14, 14, 236, 0.7);
+        color: rgb(0, 120, 255, 0.7);
         font-size: 27px;
 }
 .library ul{

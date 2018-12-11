@@ -14,10 +14,10 @@
             </div>
             <div class="copyright">
 <p>
-    Сделано с любовью в
-
+Сделано с любовью в
 Санкт-Петербурге
 </p>
+<div class="anchor">&#x2693</div>
             </div>
         </div>
         <!-- <div class="imported">Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
@@ -48,6 +48,15 @@
 .copyright{
     max-width: 170px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.anchor{
+   line-height: 38px;
+    font-size: 30px;
+    margin-left: 10px;
+    position: relative;
+    top: 2px;
 }
 img {
     width: 195px;

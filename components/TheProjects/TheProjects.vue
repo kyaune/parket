@@ -12,24 +12,22 @@
          v-on:mouseover="stop"
         v-on:mouseout="start"
         >
-        
+        <div class="img-container">
         <transition name="component-fade">
         <div class="slider"  v-bind:key="choseImage">
-            
           <img 
           :src="images[Math.abs(choseImage) % images.length].src"
-          />    
-          
-          
-            
+          />     
         </div>
         </transition> 
-        <transition name="slide">
-        <div class="text" v-bind:key="choseImage">
+        </div>
+        <div class="text-container">
+            <transition name="slide" mode="out-in">
+             <div class="text" v-bind:key="choseImage">
           {{images[Math.abs(choseImage) % images.length].name}}
-          </div>
-          </transition> 
-        
+             </div>
+            </transition> 
+        </div>
         </div>
         </div>
          
@@ -141,16 +139,32 @@ this.start();
      margin-bottom: 70px;
      line-height:1.2;
  }
+ .carousel {
+     min-width: 887px;
+     min-height: 466px;
+ }
  .library{
      margin-top: 45px;
      display: flex;
      flex-direction: column;
      min-height: 500px;
  }
- .carousel {
-     min-width: 887px;
-     min-height: 466px;
+ .img-container{
+    min-height: 466px;
  }
+ .text-container{
+     position: absolute;
+
+     width: 78%;
+    
+ }
+ .text{
+    text-align: center;
+    font-size: 13px;
+    position: relative;
+    top: 475px;
+    
+}
  .library img{
   width: 887px;
   height: 466px;
@@ -178,15 +192,7 @@ this.start();
  .buttons img:hover{
      opacity: 0.6;
  }
- .button-prev{
- }
- .button-next{
- }
- .text{
-    text-align: center;
-    font-size: 13px;
-    padding-top: 10px;
-}
+ 
  .component-fade-enter-active{
     transition: all .8s ease;
     position: absolute;
@@ -208,30 +214,55 @@ this.start();
     overflow: hidden;
 }
 .component-fade-leave {
-/* transform: translateX(0px); */
 overflow: visible;
 opacity: 1;
 }
 .component-fade-leave-to {
-/* transform: translateX(80px); */
 opacity: 0.8;
 overflow: hidden;
 }
 
-.slide-enter-active, .slide-leave-active {
-  transition: all .3s ease;
-  opacity: 1;
-  position: absolute;
-  z-index: -1;
+.slide-enter-active{
+    transition: all .6s ease;
+    /* position: absolute; */
+    overflow: visible;
+    visibility: visible;
+    opacity: 1;
 }
-.slide-enter, .slide-leave-to {
-  opacity: 0.3;
+/* .slide-enter-to{
+    overflow: visible;
+    position: absolute;
+    opacity: 1;
+} */
+.slide-enter{
+    /* position: absolute; */
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0.3;
+}
+.slide-leave-active {
+    transition: all .6s ease;
+    /* position: absolute; */
+    overflow: hidden;
+    opacity: 0.3;
+    visibility: hidden;
+}
+/* .slide-leave {
+    overflow: visible;
+    position: absolute;
+    opacity: 1;
+} */
+.slide-leave-to {
+    overflow: hidden;
+    /* position: absolute; */
+    opacity: 0.3;
+    visibility: hidden;
 }
 .picker{
     width: 56px;
     height: 10px;
     position: relative;
-    top: -30px;
+    top: -45px;
     margin-left: 47%;
     display: flex;
     flex-direction: row;
