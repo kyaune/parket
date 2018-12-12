@@ -21,14 +21,14 @@
         </div>
         </transition> 
         </div>
+        </div>
+        </div>
         <div class="text-container">
             <transition name="slide" mode="out-in">
              <div class="text" v-bind:key="choseImage">
           {{images[Math.abs(choseImage) % images.length].name}}
              </div>
             </transition> 
-        </div>
-        </div>
         </div>
          
         <div class="buttons"
@@ -155,14 +155,14 @@ this.start();
  .text-container{
      position: absolute;
 
-     width: 78%;
+     /* width: 78%; */
     
  }
  .text{
     text-align: center;
     font-size: 13px;
     position: relative;
-    top: 475px;
+    /* top: 475px; */
     
 }
  .library img{
