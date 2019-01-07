@@ -23,7 +23,7 @@ import TheFloorCoverings from '@/components/TheFloorCoverings/TheFloorCoverings.
 import TheContacts from '@/components/TheContacts/TheContacts.vue'
 import TheFooter from '@/components/TheFooter/TheFooter.vue'
 import TheMap from '@/components/TheMap/TheMap.vue'
-require('@/components/reset.css')
+// require('@/components/reset.css')
 
 export default {
   components: {
