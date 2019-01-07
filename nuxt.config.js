@@ -9,7 +9,7 @@ module.exports = {
   mode: 'universal',
   ...routerBase,
   router: {
-    base: './'
+    base: '/parket/'
   },
   /*
   ** Headers of the page
