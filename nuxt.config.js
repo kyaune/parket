@@ -6,8 +6,8 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 
 
 module.exports = {
-  mode: 'universal',
-  // ...routerBase,
+  // mode: 'universal',
+  ...routerBase,
   router: {
     base: '/parket/'
   },
