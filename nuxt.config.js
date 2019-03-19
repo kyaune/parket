@@ -7,10 +7,10 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 
 module.exports = {
   // mode: 'universal',
-  ...routerBase,
-  router: {
-    base: '/parket/'
-  },
+  // ...routerBase,
+  // router: {
+  //   base: '/parket/'
+  // },
   /*
   ** Headers of the page
   */
@@ -25,6 +25,9 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  modules: [
+    ['storyblok-nuxt', {accessToken: 'kKJbPhZdUb65JjY4rZqoHwtt', cacheProvider: 'memory'}]
+  ],
 
   /*
   ** Customize the progress-bar color

@@ -23,6 +23,7 @@ import TheFloorCoverings from '@/components/TheFloorCoverings/TheFloorCoverings.
 import TheContacts from '@/components/TheContacts/TheContacts.vue'
 import TheFooter from '@/components/TheFooter/TheFooter.vue'
 import TheMap from '@/components/TheMap/TheMap.vue'
+import storyblokLivePreview from '@/mixins/storyblokLivePreview'
 // require('@/components/reset.css')
 
 export default {
@@ -34,7 +35,21 @@ export default {
     TheContacts,
     TheFooter,
     TheMap
-  }
+  },
+  // data () {
+  //   return { story: { content: {} } }
+  // },
+  // mixins: [storyblokLivePreview],
+  // asyncData (context) {
+  //   let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+  //   return context.app.$storyapi.get('cdn/stories/home', {
+  //     version: version
+  //   }).then((res) => {
+  //     return res.data
+  //   }).catch((res) => {
+  //     context.error({ statusCode: res.response.status, message: res.response.data })
+  //   })
+  // }
 }
 
 </script>

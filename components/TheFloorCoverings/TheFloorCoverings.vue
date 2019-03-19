@@ -41,74 +41,6 @@
     </div>
 </template>
 
-<style scoped>
-.main{
-    letter-spacing: 1px;
-}
-
-ul{
-    list-style-type:none; 
-    margin: 0;
-    padding: 0; 
-}
-.description{
-    font-size: 27px;
-    font-weight: 800;
-    line-height: 34px;
-}
-.heading li{
-        cursor: pointer;
-        color: rgb(0, 120, 255);
-        font-size: 27px;
-}
-.heading li:hover{
-        cursor: pointer;
-        color: rgb(0, 120, 255, 0.7);
-        font-size: 27px;
-}
-.library ul{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.heading{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;  
-    flex: 40px;
-    justify-content: space-between;
-    width: 510px;
-}
-.list-item{
-    margin-top: 40px;
-    margin-right: 40px;
-    cursor: pointer;
-}
-.list-price{
-    font-size: 16px;
-    font-weight: 400;
-}
-.list-name{
-    font-size: 16px;
-    font-weight: 800;
-}
-img {
-    width: 233px;
-    height: 233px;
-}
-.component-fade-enter-active, .component-fade-leave-active {
-  transition: all .5s ease;
-  opacity: 1;
-}
-.component-fade-enter, .component-fade-leave-to {
-  opacity: 0;
-}
-.active{
-    text-decoration: underline;
-    text-decoration-style: solid;
-}
-
-</style>
  <script>
 
 export default {
@@ -291,4 +223,74 @@ export default {
     }
 };
 </script>
+
+
+<style scoped>
+.main{
+    letter-spacing: 1px;
+}
+
+ul{
+    list-style-type:none; 
+    margin: 0;
+    padding: 0; 
+}
+.description{
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 34px;
+}
+.heading li{
+        cursor: pointer;
+        color: rgb(0, 120, 255);
+        font-size: 27px;
+}
+.heading li:hover{
+        cursor: pointer;
+        color: rgb(0, 120, 255, 0.7);
+        font-size: 27px;
+}
+.library ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.heading{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;  
+    flex: 40px;
+    justify-content: space-between;
+    width: 510px;
+}
+.list-item{
+    margin-top: 40px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+.list-price{
+    font-size: 16px;
+    font-weight: 400;
+}
+.list-name{
+    font-size: 16px;
+    font-weight: 800;
+}
+img {
+    width: 233px;
+    height: 233px;
+}
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: all .5s ease;
+  opacity: 1;
+}
+.component-fade-enter, .component-fade-leave-to {
+  opacity: 0;
+}
+.active{
+    text-decoration: underline;
+    text-decoration-style: solid;
+}
+
+</style>
 
