@@ -6,6 +6,7 @@
 
 <script>
 import storyblokLivePreview from '@/mixins/storyblokLivePreview'
+
 export default {
   data () {
     return { story: { content: {} } }
