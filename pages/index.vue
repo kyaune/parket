@@ -1,57 +1,27 @@
-
 <template>
-<div class="container">
-  <div class="wrapper">
-    <div class="main-index">
-    <TheHeader/>
-    <TheCallback/>
-    <TheProjects/>
-    <TheFloorCoverings/>
-    <TheContacts/>
-    <TheMap/>
-    </div>
-  </div>
-  <TheFooter/>
-</div>
+   <section class="util__container">
+    <component v-if="story.content.component" :key="story.content._uid" :blok="story.content" :is="story.content.component"></component>
+  </section>
 </template>
 
 <script>
-// import TheHeader from '@/components/TheHeader/TheHeader.vue'
-// import TheCallback from '@/components/TheCallback/TheCallback.vue'
-// import TheProjects from '@/components/TheProjects/TheProjects.vue'
-// import TheFloorCoverings from '@/components/TheFloorCoverings/TheFloorCoverings.vue'
-// import TheContacts from '@/components/TheContacts/TheContacts.vue'
-// import TheFooter from '@/components/TheFooter/TheFooter.vue'
-// import TheMap from '@/components/TheMap/TheMap.vue'
 import storyblokLivePreview from '@/mixins/storyblokLivePreview'
-// require('@/components/reset.css')
-
 export default {
-  components: {
-    // TheHeader,
-    // TheCallback,
-    // TheProjects,
-    // TheFloorCoverings,
-    // TheContacts,
-    // TheFooter,
-    // TheMap
+  data () {
+    return { story: { content: {} } }
   },
-  // data () {
-  //   return { story: { content: {} } }
-  // },
-  // mixins: [storyblokLivePreview],
-  // asyncData (context) {
-  //   let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
-  //   return context.app.$storyapi.get('cdn/stories/home', {
-  //     version: version
-  //   }).then((res) => {
-  //     return res.data
-  //   }).catch((res) => {
-  //     context.error({ statusCode: res.response.status, message: res.response.data })
-  //   })
-  // }
+  mixins: [storyblokLivePreview],
+  asyncData (context) {
+    let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+    return context.app.$storyapi.get('cdn/stories/home', {
+      version: version
+    }).then((res) => {
+      return res.data
+    }).catch((res) => {
+      context.error({ statusCode: res.response.status, message: res.response.data })
+    })
+  }
 }
-
 </script>
 
 <style>
