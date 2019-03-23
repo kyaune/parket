@@ -1,21 +1,20 @@
 <template>
    <section class="util__container">
-    <component v-if="story.content.component" :key="story.content._uid" :blok="story.content" :is="story.content.component"></component>
+    <!-- <component v-if="story.content.component" :key="story.content._uid" :blok="story.content" :is="story.content.component"></component> -->
   </section>
 </template>
 
 <script>
 import storyblokLivePreview from '@/mixins/storyblokLivePreview'
-
 export default {
   data () {
     return { story: { content: {} } }
   },
-  mixins: [storyblokLivePreview],
+  // mixins: [storyblokLivePreview],
   asyncData (context) {
-    let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
-    return context.app.$storyapi.get('cdn/stories/home', {
-      version: version
+    return context.app.$storyapi
+    .get('cdn/stories/home', {
+      version: context.isDev ? "draft" : "published"
     }).then((res) => {
       return res.data
     }).catch((res) => {

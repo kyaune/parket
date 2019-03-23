@@ -1,8 +1,4 @@
-const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
-  router: {
-    base: '/parket/'
-  }
-} : {}
+
 
 
 module.exports = {
@@ -26,7 +22,7 @@ module.exports = {
     ]
   },
   modules: [
-    ['storyblok-nuxt', {accessToken: 'aTDc1EqQnP9AGqAsrDzfwwtt', cacheProvider: 'memory'}]
+    ['storyblok-nuxt', {accessToken: 'QlJudFRcJOCojAqP6RTbFgtt', cacheProvider: 'memory'}]
   ],
 
   /*
